@@ -24,6 +24,7 @@ pub:
 	recaptcha                  string
 	recaptcha_secret           string
 	job_send_recomendation_url string
+	whatsapp_api_key_instance  string
 }
 
 // load_env carrega as variáveis de ambiente primeiro do sistema operacional e, se não encontradas,
@@ -55,6 +56,7 @@ pub fn load_env() EnvConfig {
 		recaptcha:                  get_env('RECAPTCHA', env_map)
 		recaptcha_secret:           get_env('RECAPTCHA_SECRETKEY', env_map)
 		job_send_recomendation_url: get_env('JOB_SEND_RECOMENDATION_URL', env_map)
+		whatsapp_api_key_instance:  get_env('WHATSAPP_API_KEY_INSTANCE', env_map)
 	}
 }
 
