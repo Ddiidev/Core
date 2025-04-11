@@ -3,5 +3,5 @@ Module {
 	description: 'contain core entity mais foco and base implementations'
 	version: '0.0.1'
 	license: 'MIT'
-	dependencies: ['https://github.com/ken0x0a/v-dotenv']
+	dependencies: ['https://github.com/ken0x0a/v-dotenv', 'https://github.com/Ddiidev/recaptcha']
 }
