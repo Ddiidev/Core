@@ -1,7 +1,7 @@
 module utils
 
 import time
-import shareds.consts
+import consts
 
 pub fn get_date_start_and_end() (time.Time, time.Time) {
 	current_date := time.now().custom_format('YYYY-MM-DD')
