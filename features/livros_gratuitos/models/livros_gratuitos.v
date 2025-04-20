@@ -5,6 +5,7 @@ import types
 
 pub struct LivrosGratuitosProduct {
 pub:
+	id                   int
 	has_link_pdf         bool
 	has_link_read_online bool
 	title                string

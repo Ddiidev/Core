@@ -17,6 +17,16 @@ pub:
 	recaptcha_token string @[json: 'recaptchaToken']
 }
 
+pub fn (ur UserRecomendation) to_safe_log() map[string]string {
+	return {
+		'name':        ur.name or { '' }
+		'email':       ur.email
+		'type':        ur.type.str()
+		'link':        ur.link
+		'observation': ur.observation or { '' }
+	}
+}
+
 pub fn (ur UserRecomendation) validate() ! {
 	valid_name(ur.name)!
 	valid_email(ur.email)!

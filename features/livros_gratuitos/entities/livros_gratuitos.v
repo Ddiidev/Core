@@ -6,6 +6,7 @@ import features.livros_gratuitos.models
 @[table: 'LivrosGratuitosProducts']
 pub struct LivrosGratuitosProduct {
 pub:
+	id                   int @[primary; sql: serial]
 	has_link_pdf         bool
 	has_link_read_online bool
 	title                string
@@ -26,6 +27,7 @@ pub fn (mut lg LivrosGratuitosProduct) change_current_date(current_date time.Tim
 
 pub fn (lg LivrosGratuitosProduct) to_model() models.LivrosGratuitosProduct {
 	return models.LivrosGratuitosProduct{
+		id:                   lg.id
 		has_link_pdf:         lg.has_link_pdf
 		has_link_read_online: lg.has_link_read_online
 		title:                lg.title
