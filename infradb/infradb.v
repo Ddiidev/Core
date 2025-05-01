@@ -12,6 +12,8 @@ import features.instant_gaming.entities as instantgaming_entities
 import features.livros_gratuitos.entities as livrosgratuitos_entities
 import features.mercado_livre_play.entities as mercadolivre_play_entities
 import features.user_recomendation.entities as user_recomendation_entities
+import features.gift_cards.entities as gift_cards_entities
+import features.raffle_gift.entities as raffle_gift_entities
 
 pub struct ConnectionDb {
 pub:
@@ -44,6 +46,8 @@ fn init() {
 		create table livrosgratuitos_entities.LivrosGratuitosProduct
 		create table instantgaming_entities.InstantGamingProductImage
 		create table mercadolivre_play_entities.MercadoLivrePlayProduct
+		create table gift_cards_entities.GiftCard
+		create table raffle_gift_entities.RaffleGift
 	} or { panic(err.str()) }
 
 	db.close()
@@ -65,6 +69,10 @@ pub fn ConnectionDb.new() !ConnectionDb {
 			db_pg:      conn
 		}
 	}
+}
+
+pub fn (mut cc ConnectionDb) get_pg() pg.DB  {
+	return cc.db_pg
 }
 
 pub fn (mut cc ConnectionDb) close() {
@@ -116,6 +124,8 @@ fn new_mock() !sqlite.DB {
 		create table livrosgratuitos_entities.LivrosGratuitosProduct
 		create table instantgaming_entities.InstantGamingProductImage
 		create table mercadolivre_play_entities.MercadoLivrePlayProduct
+		create table gift_cards_entities.GiftCard
+		create table raffle_gift_entities.RaffleGift
 	} or { panic(err.str()) }
 
 	return db
